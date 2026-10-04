@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" width="540" height="120">
+  <title>ReviewBot Merge Shield Lockup</title>
+  <g transform="translate(15, 15) scale(0.35)">
+    <path fill="#09090b" fill-rule="evenodd" d="
+      M 52 44
+      C 52 37 57 32 64 32
+      L 192 32
+      C 199 32 204 37 204 44
+      L 204 136
+      C 204 176 172 212 132 228
+      C 129 229 127 229 124 228
+      C 84 212 52 176 52 136
+      Z
+      M 116 168
+      L 76 128
+      C 72 124 72 116 76 112
+      C 80 108 88 108 92 112
+      L 116 136
+      L 164 88
+      C 168 84 176 84 180 88
+      C 184 92 184 100 180 104
+      L 124 168
+      C 122 170 119 171 116 171
+      C 113 171 110 170 108 168
+      Z
+    "/>
+  </g>
+  <text x="130" y="76" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="700" font-size="46" fill="#09090b" letter-spacing="-1.5">Review<tspan font-weight="400" fill="#71717a">Bot</tspan></text>
+</svg>

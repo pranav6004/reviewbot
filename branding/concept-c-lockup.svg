@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" width="540" height="120">
+  <title>ReviewBot Vector R Lockup</title>
+  <g transform="translate(15, 15) scale(0.35)">
+    <path fill="#09090b" fill-rule="evenodd" d="
+      M 48 40
+      C 48 35 52 32 58 32
+      L 156 32
+      C 186 32 208 54 208 84
+      C 208 108 192 128 170 134
+      L 208 220
+      C 211 226 207 232 200 232
+      L 168 232
+      C 164 232 160 229 158 224
+      L 126 144
+      L 88 144
+      L 88 224
+      C 88 229 84 232 78 232
+      L 58 232
+      C 52 232 48 229 48 224
+      Z
+      M 88 68
+      L 88 108
+      L 152 108
+      C 164 108 172 100 172 88
+      C 172 76 164 68 152 68
+      Z
+    "/>
+  </g>
+  <text x="130" y="76" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="700" font-size="46" fill="#09090b" letter-spacing="-1.5">Review<tspan font-weight="400" fill="#71717a">Bot</tspan></text>
+</svg>

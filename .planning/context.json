@@ -1,0 +1,172 @@
+{
+  "project": {
+    "name": "ReviewBot",
+    "description": "Open-source, self-hosted, model-agnostic AI code review bot for GitHub pull requests",
+    "status": "in_progress",
+    "created": "2026-10-04"
+  },
+  "bugs": [
+    {
+      "date": "2026-10-04",
+      "bug": "ERR_MODULE_NOT_FOUND when running compiled server: package.json exports pointed to src/index.ts instead of dist/index.js",
+      "fix": "Pointed exports to dist/index.js across all monorepo packages"
+    },
+    {
+      "date": "2026-10-04",
+      "bug": "ERR_SQLITE_ERROR unable to open database file when ./data directory does not exist",
+      "fix": "Added recursive fs.mkdirSync for parent directory in ReviewDatabase constructor"
+    }
+  ],
+  "rules": [
+    "BYOK (Bring Your Own Key) — no vendor lock-in on LLM provider",
+    "GitHub App as primary integration, GitHub Action as secondary",
+    "Self-hosted first, SaaS optional later",
+    "All code review logic must be model-agnostic",
+    "Stage F finding validation: drop hallucinated files and unanchored lines before posting to GitHub",
+    "Anti-prompt-injection: wrap untrusted diffs in XML tags and forbid following commands within code comments",
+    "Deterministic secret scanning: scan added lines for credentials and flag as critical before LLM inference",
+    "Pre-LLM secret redaction: scrub detected tokens and keys from prompt payload to protect credentials",
+    "Diff size budget guards: enforce max 50 files and playground payload caps"
+  ],
+  "components": [
+    {
+      "name": "@reviewbot/diff",
+      "path": "packages/diff",
+      "description": "Unified diff parser, file stat extraction, and line-in-hunk anchor verification"
+    },
+    {
+      "name": "@reviewbot/config",
+      "path": "packages/config",
+      "description": "Zod-validated .reviewbot.yaml loader, path filtering with picomatch, and path-specific review instructions"
+    },
+    {
+      "name": "@reviewbot/llm",
+      "path": "packages/llm",
+      "description": "Provider-neutral LLM client with OpenAICompatibleProvider (OpenAI, Ollama, DeepSeek, Groq) and MockLLMProvider"
+    },
+    {
+      "name": "@reviewbot/review-core",
+      "path": "packages/review-core",
+      "description": "Core review engine orchestrator, prompt builders, and Stage F finding validator"
+    },
+    {
+      "name": "@reviewbot/github",
+      "path": "packages/github",
+      "description": "HMAC-SHA256 webhook signature verifier, Octokit GitHub App installation client, and markdown/suggestion formatter"
+    },
+    {
+      "name": "@reviewbot/persistence",
+      "path": "packages/persistence",
+      "description": "SQLite storage using Node.js built-in node:sqlite for delivery deduplication, job tracking, and finding fingerprint deduplication"
+    },
+    {
+      "name": "@reviewbot/server",
+      "path": "apps/server",
+      "description": "Fastify HTTP webhook server (/health, /api/webhooks/github) with bounded in-process review worker"
+    }
+  ],
+  "features_planned": [
+    "PR summary generation",
+    "Inline code review comments",
+    "Incremental review (only new changes)",
+    "Conversational chat via @mention",
+    "Path filters and path-based instructions",
+    "Sequence diagram generation",
+    "Static analysis integration (ast-grep, ESLint, etc.)",
+    "YAML-based configuration (.reviewbot.yaml)"
+  ],
+  "decisions": [
+    {
+      "date": "2026-10-04",
+      "decision": "Research phase — analyzed CodeRabbit architecture, alternatives (PR-Agent, Kodus, Pullfrog), GitHub App integration requirements",
+      "rationale": "Need thorough understanding before building"
+    },
+    {
+      "date": "2026-10-04",
+      "decision": "Project naming: ReviewBot with .reviewbot.yaml config and @reviewbot/* packages",
+      "rationale": "User confirmed preference aligned with Codex plan specification"
+    },
+    {
+      "date": "2026-10-04",
+      "decision": "Persistence via Node.js native node:sqlite DatabaseSync",
+      "rationale": "Zero external build tools or C++ compilation issues on Windows, single-file SQLite database"
+    },
+    {
+      "date": "2026-10-04",
+      "decision": "In-process bounded queue worker rather than external Redis/BullMQ",
+      "rationale": "Simplicity first for self-hosting; keeps deployment footprint lean"
+    }
+  ],
+  "log": [
+    {
+      "date": "2026-10-04",
+      "action": "initial_research",
+      "details": "Researched CodeRabbit internals (codegraph, agentic pipeline, sandboxed execution, AST analysis), existing open-source alternatives, GitHub App webhook/permissions model, pricing gaps to exploit"
+    },
+    {
+      "date": "2026-10-04",
+      "action": "phase_0_and_phase_1_scaffolding",
+      "details": "Implemented full monorepo with 6 packages and Fastify server. Added diff parser with hunk validation, config loader, LLM provider, review engine with Stage F validation, GitHub App webhook verifier/formatter, SQLite persistence, docker-compose and .env.example. All 7 Vitest test suites (20 tests) passing."
+    },
+    {
+      "date": "2026-10-04",
+      "action": "server_runtime_and_exports_fix",
+      "details": "Fixed package exports resolution for compiled Node ESM runtime. Added auto-creation of SQLite database directory. Verified server startup on port 3000 and /health endpoint."
+    },
+    {
+      "date": "2026-10-04",
+      "action": "live_pr_review_milestone",
+      "details": "Successfully received live webhook on PR #1, authenticated as GitHub App, ran LLM review with Gemini 3.1 Pro High, ran Stage F finding validation, and posted review summary + 2 line comments with suggestion block to https://github.com/pranav6004/reviewbot/pull/1#pullrequestreview-5407203318."
+    },
+    {
+      "date": "2026-10-04",
+      "action": "launcher_script",
+      "details": "Created run.bat script that auto-frees port 3000, starts smee webhook tunnel in a separate window, and launches the server."
+    },
+    {
+      "date": "2026-10-04",
+      "action": "control_center_ui_and_api",
+      "details": "Implemented dark mode Control Center UI at http://localhost:3000/ with live stats, review feed, interactive diff review playground, and .reviewbot.yaml config schema validator. Tested all REST endpoints end-to-end."
+    },
+    {
+      "date": "2026-10-04",
+      "action": "security_and_guardrails",
+      "details": "Implemented 4-layer security guardrail system: 1) Deterministic pre-LLM secret scanning for AWS, GitHub PATs, JWTs, private keys, and Slack tokens; 2) Pre-LLM credential redaction from prompt text; 3) Anti-prompt-injection isolation tags (<pull_request_context> & <untrusted_diff>) with system instruction hardening; 4) Diff file/byte budget guards and 250KB playground payload limits. Added 4 unit tests (24/24 passing)."
+    },
+    {
+      "date": "2026-10-04",
+      "action": "original_brand_identity_pivot",
+      "details": "Pivoted brand completely away from rabbit/animal tropes to eliminate trademark confusion. Purged rabbit emojis from UI and runner. Built 3 original developer marks: 1) The Hex Prism (optical code aperture), 2) The Merge Shield (PR gatekeeper), 3) The Vector R (topological monogram). All 3 marks scored 99-100/100 production readiness."
+    },
+    {
+      "date": "2026-10-04",
+      "action": "developer_brand_mockups_and_hybrid",
+      "details": "User selected Concept 1 (Hex Prism) and Concept 2 (Merge Shield). Built developer mockup presentation with 6 software surfaces (GitHub README, Terminal, App Icon, Website, Sticker, Social). Synthesized Concept 3 (Hex Shield Hybrid) combining hexagonal aperture with verification checkmark."
+    },
+    {
+      "date": "2026-10-04",
+      "action": "brand_kit_and_gitignore_hardening",
+      "details": "Audited git history: confirmed zero committed .env or .pem secrets. Hardened .gitignore for open-source (blocked .env.*, *.pem, *.key, *.p12, *.sqlite, data/, logs/). Locked in Concept 1 (The Hex Prism), exported full production web-icon kit (favicon.ico, apple-touch-icon, icon-192/512, webmanifest, monochrome SVGs), and mounted into dashboard UI and README."
+    },
+    {
+      "date": "2026-10-04",
+      "action": "open_source_license_and_readme",
+      "details": "Added official Apache 2.0 LICENSE file. Rewrote README.md into an exhaustive, production-grade open-source document featuring SVG brand banner, shields/badges, comparison matrix vs commercial SaaS, 7-stage pipeline diagram, Control Center dashboard tour, GitHub App permission tables, local runner guide, and .reviewbot.yaml specification."
+    },
+    {
+      "date": "2026-10-04",
+      "action": "readme_streamline_and_task_cleanup",
+      "details": "Streamlined README.md from 300 lines to a punchy, clean 100-line overview (removed overshared internal pipeline specs). Terminated lingering background task-805 which was causing queued messages. Pushed clean README to main and test/ai-review-test."
+    },
+    {
+      "date": "2026-10-04",
+      "action": "rabbit_purge_and_run_bat_browser_open",
+      "details": "Purged residual rabbit emoji from packages/github/src/formatter.ts, rebuilt all workspace dist bundles, and added automatic localhost:3000 browser launch to run.bat."
+    },
+    {
+      "date": "2026-10-05",
+      "action": "security_audit_execution",
+      "details": "Executed full formal security audit on ReviewBot using security-audit skill. Mapped architecture, evaluated 10 attack classes across 5 subsystems, validated coverage-ledger.json (10 units PASS) and findings.json (3 confirmed findings PASS). Identified webhook fail-open condition, unauthenticated playground LLM quota exhaustion, and telemetry repository disclosure. Generated complete report artifacts in security-audit-run/."
+    }
+  ]
+}

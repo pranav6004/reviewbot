@@ -1,0 +1,395 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="984" viewBox="0 0 1600 984"><defs><filter id="grey"><feColorMatrix type="saturate" values="0"/></filter></defs><rect width="1600" height="984" fill="#f7f7f4"/><text x="60" y="78" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="40" font-weight="700" fill="#161616">ReviewBot — Logo Concepts (Original Identity)</text><text x="60" y="116" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="20" fill="#6b6b6b">Concepts for review — pick a direction (or tell me what you like in each).</text><rect x="60" y="150" width="474.667" height="774" rx="18" fill="#fff" stroke="#e4e4e0" stroke-width="1"/><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="90" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Hex Prism Mark</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 128 24
+    L 218 76
+    L 218 180
+    L 128 232
+    L 38 180
+    L 38 76
+    Z
+    M 128 68
+    L 180 128
+    L 160 148
+    L 128 112
+    L 96 148
+    L 76 128
+    Z
+    M 128 144
+    L 148 164
+    L 128 184
+    L 108 164
+    Z
+  "/>
+</svg>
+</g><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" x="90" y="514" width="414.667" height="120" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Hex Prism Lockup</title>
+  <g transform="translate(15, 15) scale(0.35)">
+    <path fill="#09090b" fill-rule="evenodd" d="
+      M 128 24
+      L 218 76
+      L 218 180
+      L 128 232
+      L 38 180
+      L 38 76
+      Z
+      M 128 68
+      L 180 128
+      L 160 148
+      L 128 112
+      L 96 148
+      L 76 128
+      Z
+      M 128 144
+      L 148 164
+      L 128 184
+      L 108 164
+      Z
+    "/>
+  </g>
+  <text x="130" y="76" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="700" font-size="46" fill="#09090b" letter-spacing="-1.5">Review<tspan font-weight="400" fill="#71717a">Bot</tspan></text>
+</svg>
+</g><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="90" y="660" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Hex Prism Mark</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 128 24
+    L 218 76
+    L 218 180
+    L 128 232
+    L 38 180
+    L 38 76
+    Z
+    M 128 68
+    L 180 128
+    L 160 148
+    L 128 112
+    L 96 148
+    L 76 128
+    Z
+    M 128 144
+    L 148 164
+    L 128 184
+    L 108 164
+    Z
+  "/>
+</svg>
+</g><text x="122" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="180" y="692" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Hex Prism Mark</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 128 24
+    L 218 76
+    L 218 180
+    L 128 232
+    L 38 180
+    L 38 76
+    Z
+    M 128 68
+    L 180 128
+    L 160 148
+    L 128 112
+    L 96 148
+    L 76 128
+    Z
+    M 128 144
+    L 148 164
+    L 128 184
+    L 108 164
+    Z
+  "/>
+</svg>
+</g><text x="196" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="238" y="708" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Hex Prism Mark</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 128 24
+    L 218 76
+    L 218 180
+    L 128 232
+    L 38 180
+    L 38 76
+    Z
+    M 128 68
+    L 180 128
+    L 160 148
+    L 128 112
+    L 96 148
+    L 76 128
+    Z
+    M 128 144
+    L 148 164
+    L 128 184
+    L 108 164
+    Z
+  "/>
+</svg>
+</g><text x="246" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="90.0" y="780" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">A · The Hex Prism</text><text x="90.0" y="814" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Precision hexagonal aperture with code</text><text x="90.0" y="840" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">chevrons for deep-dive inspection.</text><rect x="562.667" y="150" width="474.667" height="774" rx="18" fill="#fff" stroke="#161616" stroke-width="2"/><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="592.667" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Merge Shield Mark</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 52 44
+    C 52 37 57 32 64 32
+    L 192 32
+    C 199 32 204 37 204 44
+    L 204 136
+    C 204 176 172 212 132 228
+    C 129 229 127 229 124 228
+    C 84 212 52 176 52 136
+    Z
+    M 116 168
+    L 76 128
+    C 72 124 72 116 76 112
+    C 80 108 88 108 92 112
+    L 116 136
+    L 164 88
+    C 168 84 176 84 180 88
+    C 184 92 184 100 180 104
+    L 124 168
+    C 122 170 119 171 116 171
+    C 113 171 110 170 108 168
+    Z
+  "/>
+</svg>
+</g><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" x="592.667" y="514" width="414.667" height="120" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Merge Shield Lockup</title>
+  <g transform="translate(15, 15) scale(0.35)">
+    <path fill="#09090b" fill-rule="evenodd" d="
+      M 52 44
+      C 52 37 57 32 64 32
+      L 192 32
+      C 199 32 204 37 204 44
+      L 204 136
+      C 204 176 172 212 132 228
+      C 129 229 127 229 124 228
+      C 84 212 52 176 52 136
+      Z
+      M 116 168
+      L 76 128
+      C 72 124 72 116 76 112
+      C 80 108 88 108 92 112
+      L 116 136
+      L 164 88
+      C 168 84 176 84 180 88
+      C 184 92 184 100 180 104
+      L 124 168
+      C 122 170 119 171 116 171
+      C 113 171 110 170 108 168
+      Z
+    "/>
+  </g>
+  <text x="130" y="76" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="700" font-size="46" fill="#09090b" letter-spacing="-1.5">Review<tspan font-weight="400" fill="#71717a">Bot</tspan></text>
+</svg>
+</g><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="592.667" y="660" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Merge Shield Mark</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 52 44
+    C 52 37 57 32 64 32
+    L 192 32
+    C 199 32 204 37 204 44
+    L 204 136
+    C 204 176 172 212 132 228
+    C 129 229 127 229 124 228
+    C 84 212 52 176 52 136
+    Z
+    M 116 168
+    L 76 128
+    C 72 124 72 116 76 112
+    C 80 108 88 108 92 112
+    L 116 136
+    L 164 88
+    C 168 84 176 84 180 88
+    C 184 92 184 100 180 104
+    L 124 168
+    C 122 170 119 171 116 171
+    C 113 171 110 170 108 168
+    Z
+  "/>
+</svg>
+</g><text x="624.667" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="682.667" y="692" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Merge Shield Mark</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 52 44
+    C 52 37 57 32 64 32
+    L 192 32
+    C 199 32 204 37 204 44
+    L 204 136
+    C 204 176 172 212 132 228
+    C 129 229 127 229 124 228
+    C 84 212 52 176 52 136
+    Z
+    M 116 168
+    L 76 128
+    C 72 124 72 116 76 112
+    C 80 108 88 108 92 112
+    L 116 136
+    L 164 88
+    C 168 84 176 84 180 88
+    C 184 92 184 100 180 104
+    L 124 168
+    C 122 170 119 171 116 171
+    C 113 171 110 170 108 168
+    Z
+  "/>
+</svg>
+</g><text x="698.667" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="740.667" y="708" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Merge Shield Mark</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 52 44
+    C 52 37 57 32 64 32
+    L 192 32
+    C 199 32 204 37 204 44
+    L 204 136
+    C 204 176 172 212 132 228
+    C 129 229 127 229 124 228
+    C 84 212 52 176 52 136
+    Z
+    M 116 168
+    L 76 128
+    C 72 124 72 116 76 112
+    C 80 108 88 108 92 112
+    L 116 136
+    L 164 88
+    C 168 84 176 84 180 88
+    C 184 92 184 100 180 104
+    L 124 168
+    C 122 170 119 171 116 171
+    C 113 171 110 170 108 168
+    Z
+  "/>
+</svg>
+</g><text x="748.667" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="592.6666666666667" y="780" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">B · The Merge Shield</text><text x="592.6666666666667" y="808" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#161616" letter-spacing="1.5">RECOMMENDED</text><text x="592.6666666666667" y="842" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Converging git branch lines interlocking</text><text x="592.6666666666667" y="868" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">into a security verification shield.</text><rect x="1065.33" y="150" width="474.667" height="774" rx="18" fill="#fff" stroke="#e4e4e0" stroke-width="1"/><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="1095.33" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Vector R Monogram</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 48 40
+    C 48 35 52 32 58 32
+    L 156 32
+    C 186 32 208 54 208 84
+    C 208 108 192 128 170 134
+    L 208 220
+    C 211 226 207 232 200 232
+    L 168 232
+    C 164 232 160 229 158 224
+    L 126 144
+    L 88 144
+    L 88 224
+    C 88 229 84 232 78 232
+    L 58 232
+    C 52 232 48 229 48 224
+    Z
+    M 88 68
+    L 88 108
+    L 152 108
+    C 164 108 172 100 172 88
+    C 172 76 164 68 152 68
+    Z
+  "/>
+</svg>
+</g><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" x="1095.33" y="514" width="414.667" height="120" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Vector R Lockup</title>
+  <g transform="translate(15, 15) scale(0.35)">
+    <path fill="#09090b" fill-rule="evenodd" d="
+      M 48 40
+      C 48 35 52 32 58 32
+      L 156 32
+      C 186 32 208 54 208 84
+      C 208 108 192 128 170 134
+      L 208 220
+      C 211 226 207 232 200 232
+      L 168 232
+      C 164 232 160 229 158 224
+      L 126 144
+      L 88 144
+      L 88 224
+      C 88 229 84 232 78 232
+      L 58 232
+      C 52 232 48 229 48 224
+      Z
+      M 88 68
+      L 88 108
+      L 152 108
+      C 164 108 172 100 172 88
+      C 172 76 164 68 152 68
+      Z
+    "/>
+  </g>
+  <text x="130" y="76" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="700" font-size="46" fill="#09090b" letter-spacing="-1.5">Review<tspan font-weight="400" fill="#71717a">Bot</tspan></text>
+</svg>
+</g><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="1095.33" y="660" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Vector R Monogram</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 48 40
+    C 48 35 52 32 58 32
+    L 156 32
+    C 186 32 208 54 208 84
+    C 208 108 192 128 170 134
+    L 208 220
+    C 211 226 207 232 200 232
+    L 168 232
+    C 164 232 160 229 158 224
+    L 126 144
+    L 88 144
+    L 88 224
+    C 88 229 84 232 78 232
+    L 58 232
+    C 52 232 48 229 48 224
+    Z
+    M 88 68
+    L 88 108
+    L 152 108
+    C 164 108 172 100 172 88
+    C 172 76 164 68 152 68
+    Z
+  "/>
+</svg>
+</g><text x="1127.33" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="1185.33" y="692" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Vector R Monogram</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 48 40
+    C 48 35 52 32 58 32
+    L 156 32
+    C 186 32 208 54 208 84
+    C 208 108 192 128 170 134
+    L 208 220
+    C 211 226 207 232 200 232
+    L 168 232
+    C 164 232 160 229 158 224
+    L 126 144
+    L 88 144
+    L 88 224
+    C 88 229 84 232 78 232
+    L 58 232
+    C 52 232 48 229 48 224
+    Z
+    M 88 68
+    L 88 108
+    L 152 108
+    C 164 108 172 100 172 88
+    C 172 76 164 68 152 68
+    Z
+  "/>
+</svg>
+</g><text x="1201.33" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="1243.33" y="708" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Vector R Monogram</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 48 40
+    C 48 35 52 32 58 32
+    L 156 32
+    C 186 32 208 54 208 84
+    C 208 108 192 128 170 134
+    L 208 220
+    C 211 226 207 232 200 232
+    L 168 232
+    C 164 232 160 229 158 224
+    L 126 144
+    L 88 144
+    L 88 224
+    C 88 229 84 232 78 232
+    L 58 232
+    C 52 232 48 229 48 224
+    Z
+    M 88 68
+    L 88 108
+    L 152 108
+    C 164 108 172 100 172 88
+    C 172 76 164 68 152 68
+    Z
+  "/>
+</svg>
+</g><text x="1251.33" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="1095.3333333333335" y="780" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">C · The Vector R</text><text x="1095.3333333333335" y="814" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Architectural monogram &#x27;R&#x27; with pull</text><text x="1095.3333333333335" y="840" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">request merge trajectory leg.</text></svg>

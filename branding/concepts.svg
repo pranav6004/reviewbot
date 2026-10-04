@@ -1,0 +1,510 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="984" viewBox="0 0 1600 984"><defs><filter id="grey"><feColorMatrix type="saturate" values="0"/></filter></defs><rect width="1600" height="984" fill="#f7f7f4"/><text x="60" y="78" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="40" font-weight="700" fill="#161616">ReviewBot — Logo Concepts</text><text x="60" y="116" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="20" fill="#6b6b6b">Concepts for review — pick a direction (or tell me what you like in each).</text><rect x="60" y="150" width="474.667" height="774" rx="18" fill="#fff" stroke="#161616" stroke-width="2"/><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="90" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Radar Rabbit Mark</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 92 24
+    C 104 24 112 34 112 46
+    L 112 110
+    L 144 110
+    L 144 46
+    C 144 34 152 24 164 24
+    C 176 24 184 34 184 46
+    L 184 136
+    L 216 168
+    C 224 176 224 188 216 196
+    L 184 228
+    C 176 236 164 236 156 228
+    L 128 200
+    L 100 228
+    C 92 236 80 236 72 228
+    L 40 196
+    C 32 188 32 176 40 168
+    L 72 136
+    L 72 46
+    C 72 34 80 24 92 24
+    Z
+    M 128 132
+    L 164 168
+    L 146 186
+    L 128 168
+    L 110 186
+    L 92 168
+    Z
+  "/>
+</svg>
+</g><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" x="90" y="514" width="414.667" height="120" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Horizontal Lockup A</title>
+  <g transform="translate(10, 10) scale(0.39)">
+    <path fill="#09090b" fill-rule="evenodd" d="
+      M 92 24
+      C 104 24 112 34 112 46
+      L 112 110
+      L 144 110
+      L 144 46
+      C 144 34 152 24 164 24
+      C 176 24 184 34 184 46
+      L 184 136
+      L 216 168
+      C 224 176 224 188 216 196
+      L 184 228
+      C 176 236 164 236 156 228
+      L 128 200
+      L 100 228
+      C 92 236 80 236 72 228
+      L 40 196
+      C 32 188 32 176 40 168
+      L 72 136
+      L 72 46
+      C 72 34 80 24 92 24
+      Z
+      M 128 132
+      L 164 168
+      L 146 186
+      L 128 168
+      L 110 186
+      L 92 168
+      Z
+    "/>
+  </g>
+  <text x="130" y="76" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="700" font-size="46" fill="#09090b" letter-spacing="-1.5">Review<tspan font-weight="400" fill="#71717a">Bot</tspan></text>
+</svg>
+</g><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="90" y="660" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Radar Rabbit Mark</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 92 24
+    C 104 24 112 34 112 46
+    L 112 110
+    L 144 110
+    L 144 46
+    C 144 34 152 24 164 24
+    C 176 24 184 34 184 46
+    L 184 136
+    L 216 168
+    C 224 176 224 188 216 196
+    L 184 228
+    C 176 236 164 236 156 228
+    L 128 200
+    L 100 228
+    C 92 236 80 236 72 228
+    L 40 196
+    C 32 188 32 176 40 168
+    L 72 136
+    L 72 46
+    C 72 34 80 24 92 24
+    Z
+    M 128 132
+    L 164 168
+    L 146 186
+    L 128 168
+    L 110 186
+    L 92 168
+    Z
+  "/>
+</svg>
+</g><text x="122" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="180" y="692" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Radar Rabbit Mark</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 92 24
+    C 104 24 112 34 112 46
+    L 112 110
+    L 144 110
+    L 144 46
+    C 144 34 152 24 164 24
+    C 176 24 184 34 184 46
+    L 184 136
+    L 216 168
+    C 224 176 224 188 216 196
+    L 184 228
+    C 176 236 164 236 156 228
+    L 128 200
+    L 100 228
+    C 92 236 80 236 72 228
+    L 40 196
+    C 32 188 32 176 40 168
+    L 72 136
+    L 72 46
+    C 72 34 80 24 92 24
+    Z
+    M 128 132
+    L 164 168
+    L 146 186
+    L 128 168
+    L 110 186
+    L 92 168
+    Z
+  "/>
+</svg>
+</g><text x="196" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="238" y="708" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Radar Rabbit Mark</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 92 24
+    C 104 24 112 34 112 46
+    L 112 110
+    L 144 110
+    L 144 46
+    C 144 34 152 24 164 24
+    C 176 24 184 34 184 46
+    L 184 136
+    L 216 168
+    C 224 176 224 188 216 196
+    L 184 228
+    C 176 236 164 236 156 228
+    L 128 200
+    L 100 228
+    C 92 236 80 236 72 228
+    L 40 196
+    C 32 188 32 176 40 168
+    L 72 136
+    L 72 46
+    C 72 34 80 24 92 24
+    Z
+    M 128 132
+    L 164 168
+    L 146 186
+    L 128 168
+    L 110 186
+    L 92 168
+    Z
+  "/>
+</svg>
+</g><text x="246" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="90.0" y="780" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">A · The Radar Rabbit</text><text x="90.0" y="808" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#161616" letter-spacing="1.5">RECOMMENDED</text><text x="90.0" y="842" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Negative-space code brackets forming an</text><text x="90.0" y="868" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">alert forward-leaning hare.</text><rect x="562.667" y="150" width="474.667" height="774" rx="18" fill="#fff" stroke="#e4e4e0" stroke-width="1"/><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="592.667" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Git Bunny Mark</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 71 28
+    C 83 28 91 36 91 48
+    L 91 100
+    L 119 100
+    L 119 60
+    C 119 48 127 40 139 40
+    C 151 40 159 48 159 60
+    L 159 116
+    C 183 122 203 140 211 164
+    C 217 182 211 200 197 214
+    C 185 226 169 232 151 232
+    L 63 232
+    C 51 232 43 224 43 212
+    C 43 200 51 192 63 192
+    L 151 192
+    C 161 192 169 186 171 176
+    C 173 164 165 154 153 152
+    C 147 152 139 154 133 158
+    L 91 158
+    L 91 212
+    C 91 224 83 232 71 232
+    C 59 232 51 224 51 212
+    L 51 48
+    C 51 36 59 28 71 28
+    Z
+    M 147 120
+    C 156 120 163 127 163 136
+    C 163 145 156 152 147 152
+    C 138 152 131 145 131 136
+    C 131 127 138 120 147 120
+    Z
+  "/>
+</svg>
+</g><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" x="592.667" y="514" width="414.667" height="120" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Horizontal Lockup B</title>
+  <g transform="translate(10, 10) scale(0.39)">
+    <path fill="#09090b" fill-rule="evenodd" d="
+      M 71 28
+      C 83 28 91 36 91 48
+      L 91 100
+      L 119 100
+      L 119 60
+      C 119 48 127 40 139 40
+      C 151 40 159 48 159 60
+      L 159 116
+      C 183 122 203 140 211 164
+      C 217 182 211 200 197 214
+      C 185 226 169 232 151 232
+      L 63 232
+      C 51 232 43 224 43 212
+      C 43 200 51 192 63 192
+      L 151 192
+      C 161 192 169 186 171 176
+      C 173 164 165 154 153 152
+      C 147 152 139 154 133 158
+      L 91 158
+      L 91 212
+      C 91 224 83 232 71 232
+      C 59 232 51 224 51 212
+      L 51 48
+      C 51 36 59 28 71 28
+      Z
+      M 147 120
+      C 156 120 163 127 163 136
+      C 163 145 156 152 147 152
+      C 138 152 131 145 131 136
+      C 131 127 138 120 147 120
+      Z
+    "/>
+  </g>
+  <text x="130" y="76" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="700" font-size="46" fill="#09090b" letter-spacing="-1.5">Review<tspan font-weight="400" fill="#71717a">Bot</tspan></text>
+</svg>
+</g><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="592.667" y="660" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Git Bunny Mark</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 71 28
+    C 83 28 91 36 91 48
+    L 91 100
+    L 119 100
+    L 119 60
+    C 119 48 127 40 139 40
+    C 151 40 159 48 159 60
+    L 159 116
+    C 183 122 203 140 211 164
+    C 217 182 211 200 197 214
+    C 185 226 169 232 151 232
+    L 63 232
+    C 51 232 43 224 43 212
+    C 43 200 51 192 63 192
+    L 151 192
+    C 161 192 169 186 171 176
+    C 173 164 165 154 153 152
+    C 147 152 139 154 133 158
+    L 91 158
+    L 91 212
+    C 91 224 83 232 71 232
+    C 59 232 51 224 51 212
+    L 51 48
+    C 51 36 59 28 71 28
+    Z
+    M 147 120
+    C 156 120 163 127 163 136
+    C 163 145 156 152 147 152
+    C 138 152 131 145 131 136
+    C 131 127 138 120 147 120
+    Z
+  "/>
+</svg>
+</g><text x="624.667" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="682.667" y="692" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Git Bunny Mark</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 71 28
+    C 83 28 91 36 91 48
+    L 91 100
+    L 119 100
+    L 119 60
+    C 119 48 127 40 139 40
+    C 151 40 159 48 159 60
+    L 159 116
+    C 183 122 203 140 211 164
+    C 217 182 211 200 197 214
+    C 185 226 169 232 151 232
+    L 63 232
+    C 51 232 43 224 43 212
+    C 43 200 51 192 63 192
+    L 151 192
+    C 161 192 169 186 171 176
+    C 173 164 165 154 153 152
+    C 147 152 139 154 133 158
+    L 91 158
+    L 91 212
+    C 91 224 83 232 71 232
+    C 59 232 51 224 51 212
+    L 51 48
+    C 51 36 59 28 71 28
+    Z
+    M 147 120
+    C 156 120 163 127 163 136
+    C 163 145 156 152 147 152
+    C 138 152 131 145 131 136
+    C 131 127 138 120 147 120
+    Z
+  "/>
+</svg>
+</g><text x="698.667" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="740.667" y="708" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Git Bunny Mark</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 71 28
+    C 83 28 91 36 91 48
+    L 91 100
+    L 119 100
+    L 119 60
+    C 119 48 127 40 139 40
+    C 151 40 159 48 159 60
+    L 159 116
+    C 183 122 203 140 211 164
+    C 217 182 211 200 197 214
+    C 185 226 169 232 151 232
+    L 63 232
+    C 51 232 43 224 43 212
+    C 43 200 51 192 63 192
+    L 151 192
+    C 161 192 169 186 171 176
+    C 173 164 165 154 153 152
+    C 147 152 139 154 133 158
+    L 91 158
+    L 91 212
+    C 91 224 83 232 71 232
+    C 59 232 51 224 51 212
+    L 51 48
+    C 51 36 59 28 71 28
+    Z
+    M 147 120
+    C 156 120 163 127 163 136
+    C 163 145 156 152 147 152
+    C 138 152 131 145 131 136
+    C 131 127 138 120 147 120
+    Z
+  "/>
+</svg>
+</g><text x="748.667" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="592.6666666666667" y="780" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">B · The Git Bunny</text><text x="592.6666666666667" y="814" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Continuous monoline letterform &#x27;R&#x27; with git</text><text x="592.6666666666667" y="840" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">commit node eye.</text><rect x="1065.33" y="150" width="474.667" height="774" rx="18" fill="#fff" stroke="#e4e4e0" stroke-width="1"/><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="1095.33" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Prism Checkmark Mark</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 78 36
+    C 88 36 96 44 98 54
+    L 110 114
+    L 142 114
+    L 174 44
+    C 178 34 188 28 198 32
+    C 208 36 214 46 210 56
+    L 168 152
+    L 204 188
+    C 212 196 212 208 204 216
+    L 188 232
+    C 180 240 168 240 160 232
+    L 128 200
+    L 96 232
+    C 88 240 76 240 68 232
+    L 48 212
+    C 40 204 40 192 48 184
+    L 76 156
+    L 62 56
+    C 60 46 68 36 78 36
+    Z
+    M 128 140
+    L 152 164
+    L 128 188
+    L 104 164
+    Z
+  "/>
+</svg>
+</g><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" x="1095.33" y="514" width="414.667" height="120" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Horizontal Lockup C</title>
+  <g transform="translate(10, 10) scale(0.39)">
+    <path fill="#09090b" fill-rule="evenodd" d="
+      M 78 36
+      C 88 36 96 44 98 54
+      L 110 114
+      L 142 114
+      L 174 44
+      C 178 34 188 28 198 32
+      C 208 36 214 46 210 56
+      L 168 152
+      L 204 188
+      C 212 196 212 208 204 216
+      L 188 232
+      C 180 240 168 240 160 232
+      L 128 200
+      L 96 232
+      C 88 240 76 240 68 232
+      L 48 212
+      C 40 204 40 192 48 184
+      L 76 156
+      L 62 56
+      C 60 46 68 36 78 36
+      Z
+      M 128 140
+      L 152 164
+      L 128 188
+      L 104 164
+      Z
+    "/>
+  </g>
+  <text x="130" y="76" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="700" font-size="46" fill="#09090b" letter-spacing="-1.5">Review<tspan font-weight="400" fill="#71717a">Bot</tspan></text>
+</svg>
+</g><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="1095.33" y="660" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Prism Checkmark Mark</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 78 36
+    C 88 36 96 44 98 54
+    L 110 114
+    L 142 114
+    L 174 44
+    C 178 34 188 28 198 32
+    C 208 36 214 46 210 56
+    L 168 152
+    L 204 188
+    C 212 196 212 208 204 216
+    L 188 232
+    C 180 240 168 240 160 232
+    L 128 200
+    L 96 232
+    C 88 240 76 240 68 232
+    L 48 212
+    C 40 204 40 192 48 184
+    L 76 156
+    L 62 56
+    C 60 46 68 36 78 36
+    Z
+    M 128 140
+    L 152 164
+    L 128 188
+    L 104 164
+    Z
+  "/>
+</svg>
+</g><text x="1127.33" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="1185.33" y="692" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Prism Checkmark Mark</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 78 36
+    C 88 36 96 44 98 54
+    L 110 114
+    L 142 114
+    L 174 44
+    C 178 34 188 28 198 32
+    C 208 36 214 46 210 56
+    L 168 152
+    L 204 188
+    C 212 196 212 208 204 216
+    L 188 232
+    C 180 240 168 240 160 232
+    L 128 200
+    L 96 232
+    C 88 240 76 240 68 232
+    L 48 212
+    C 40 204 40 192 48 184
+    L 76 156
+    L 62 56
+    C 60 46 68 36 78 36
+    Z
+    M 128 140
+    L 152 164
+    L 128 188
+    L 104 164
+    Z
+  "/>
+</svg>
+</g><text x="1201.33" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g filter="url(#grey)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="1243.33" y="708" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <title>ReviewBot Prism Checkmark Mark</title>
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 78 36
+    C 88 36 96 44 98 54
+    L 110 114
+    L 142 114
+    L 174 44
+    C 178 34 188 28 198 32
+    C 208 36 214 46 210 56
+    L 168 152
+    L 204 188
+    C 212 196 212 208 204 216
+    L 188 232
+    C 180 240 168 240 160 232
+    L 128 200
+    L 96 232
+    C 88 240 76 240 68 232
+    L 48 212
+    C 40 204 40 192 48 184
+    L 76 156
+    L 62 56
+    C 60 46 68 36 78 36
+    Z
+    M 128 140
+    L 152 164
+    L 128 188
+    L 104 164
+    Z
+  "/>
+</svg>
+</g><text x="1251.33" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="1095.3333333333335" y="780" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">C · The Prism Check</text><text x="1095.3333333333335" y="814" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Faceted abstract hare with right ear</text><text x="1095.3333333333335" y="840" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">forming an approval checkmark.</text></svg>

@@ -1,0 +1,26 @@
+services:
+  reviewbot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: reviewbot
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - HOST=0.0.0.0
+      - NODE_ENV=production
+      - DATABASE_PATH=/app/data/reviewbot.sqlite
+      - GITHUB_APP_ID=${GITHUB_APP_ID}
+      - GITHUB_PRIVATE_KEY=${GITHUB_PRIVATE_KEY}
+      - GITHUB_WEBHOOK_SECRET=${GITHUB_WEBHOOK_SECRET}
+      - REVIEWBOT_LLM_BASE_URL=${REVIEWBOT_LLM_BASE_URL:-https://api.openai.com/v1}
+      - REVIEWBOT_LLM_API_KEY=${REVIEWBOT_LLM_API_KEY}
+      - REVIEWBOT_LLM_MODEL=${REVIEWBOT_LLM_MODEL:-gpt-4o-mini}
+    volumes:
+      - reviewbot-data:/app/data
+
+volumes:
+  reviewbot-data:
+    driver: local

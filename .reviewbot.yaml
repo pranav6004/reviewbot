@@ -1,0 +1,34 @@
+version: 1
+
+review:
+  enabled: true
+  profile: balanced
+  min_severity: warning
+  max_findings: 20
+  draft_pull_requests: false
+  path_filters:
+    - "!dist/**"
+    - "!build/**"
+    - "!node_modules/**"
+    - "!**/*.lock"
+    - "!**/*.min.js"
+    - "!**/generated/**"
+  instructions: |
+    Only report issues introduced by this pull request.
+    Focus on code correctness, security vulnerabilities, and logic bugs.
+    Prefer actionable suggestions with replacement code where appropriate.
+
+path_instructions:
+  - path: "packages/review-core/**"
+    instructions:
+      - "Verify that finding validation does not allow unanchored lines or false positives."
+  - path: "apps/server/**"
+    instructions:
+      - "Ensure all webhook requests strictly verify HMAC-SHA256 signatures before processing."
+
+tools:
+  enabled: true
+  run_existing_configs: true
+
+chat:
+  enabled: false

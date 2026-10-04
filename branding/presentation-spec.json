@@ -1,0 +1,47 @@
+{
+  "brand": "ReviewBot",
+  "tagline": "Autonomous AI Code Review & Security Gatekeeper",
+  "brief": "Open-source, self-hosted, model-agnostic code review engine for GitHub PRs. Surgical precision, Stage F finding validation, and deterministic secret leak prevention.",
+  "adjectives": ["precise", "authoritative", "watchful", "developer-grade"],
+  "industry": "software",
+  "brand_color": "#10b981",
+  "greyscale": false,
+  "final": false,
+  "round": 1,
+  "concepts": [
+    {
+      "name": "1. The Hex Prism",
+      "symbol": "concept-a-symbol.svg",
+      "lockup": "concept-a-lockup.svg",
+      "idea": "Precision hexagonal aperture with code chevrons for deep-dive inspection.",
+      "rationale": [
+        "Hexagonal geometry signals precision engineering and compiler optics.",
+        "High legibility down to 16px favicon scale.",
+        "Fits naturally alongside modern developer tooling ecosystems."
+      ]
+    },
+    {
+      "name": "2. The Merge Shield",
+      "symbol": "concept-b-symbol.svg",
+      "lockup": "concept-b-lockup.svg",
+      "idea": "Converging git branch lines interlocking into a security verification shield.",
+      "rationale": [
+        "Unmistakable symbol of CI/CD protection and gatekeeper security.",
+        "Built-in checkmark glyph communicates verified code quality.",
+        "Bold, confident presence on dark mode interfaces."
+      ]
+    },
+    {
+      "name": "3. The Hex Shield (Hybrid)",
+      "symbol": "concept-hybrid.svg",
+      "lockup": "concept-hybrid-lockup.svg",
+      "idea": "Architectural fusion of the hexagonal code chevron and the protective gatekeeper checkmark.",
+      "rationale": [
+        "Synthesizes the optical code chevron of Concept 1 with the protective checkmark of Concept 2.",
+        "Balances security verification with code intelligence.",
+        "Zero trademark collisions; completely distinct developer brand."
+      ]
+    }
+  ],
+  "recommendation": "Concept 2 (The Merge Shield) or Concept 3 (The Hex Shield Hybrid) provide the strongest immediate visual cue that ReviewBot is a security gatekeeper protecting the codebase."
+}

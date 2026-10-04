@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" width="540" height="120">
+  <title>ReviewBot Hex Shield Lockup</title>
+  <g transform="translate(15, 15) scale(0.35)">
+    <path fill="#09090b" fill-rule="evenodd" d="
+      M 68 32
+      C 58 32 52 38 52 48
+      L 52 136
+      C 52 176 84 212 124 228
+      C 127 229 129 229 132 228
+      C 172 212 204 176 204 136
+      L 204 48
+      C 204 38 198 32 188 32
+      Z
+      M 128 72
+      L 168 112
+      L 152 128
+      L 128 104
+      L 104 128
+      L 88 112
+      Z
+      M 116 180
+      L 80 144
+      C 76 140 76 132 80 128
+      C 84 124 92 124 96 128
+      L 116 148
+      L 160 104
+      C 164 100 172 100 176 104
+      C 180 108 180 116 176 120
+      L 124 172
+      C 122 174 119 175 116 175
+      C 113 175 110 174 108 172
+      Z
+    "/>
+  </g>
+  <text x="130" y="76" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="700" font-size="46" fill="#09090b" letter-spacing="-1.5">Review<tspan font-weight="400" fill="#71717a">Bot</tspan></text>
+</svg>

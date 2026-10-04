@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReviewBot Control Center</title>
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#09090b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #09090b;
+      --surface: #121216;
+      --surface-hover: #18181f;
+      --border: #222228;
+      --border-light: #2e2e38;
+      --text: #f4f4f5;
+      --text-muted: #828292;
+      --text-dim: #555562;
+      --accent: #10b981;
+      --accent-dim: rgba(16, 185, 129, 0.12);
+      --critical: #f43f5e;
+      --critical-dim: rgba(244, 63, 94, 0.12);
+      --warning: #f59e0b;
+      --warning-dim: rgba(245, 158, 11, 0.12);
+      --info: #06b6d4;
+      --info-dim: rgba(6, 182, 212, 0.12);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    code, pre, .mono {
+      font-family: 'Geist Mono', monospace;
+    }
+
+    /* Layout */
+    .app-header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(9, 9, 11, 0.85);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-logo {
+      font-size: 1.35rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius);
+    }
+
+    .brand-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: var(--accent-dim);
+      color: var(--accent);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    /* Tabs */
+    .nav-tabs {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.5rem 0.85rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .tab-btn:hover {
+      color: var(--text);
+      background: var(--surface);
+    }
+
+    .tab-btn.active {
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    /* Container */
+    .main-wrap {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    .tab-pane {
+      display: none;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
+    /* Bento Grid */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      transition: border-color 0.15s;
+    }
+
+    .card:hover {
+      border-color: var(--border-light);
+    }
+
+    .card-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-val {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .card-val.accent { color: var(--accent); }
+    .card-val.critical { color: var(--critical); }
+    .card-val.warning { color: var(--warning); }
+
+    .card-meta {
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--text-dim);
+    }
+
+    /* System Vitality 2-col */
+    .vitality-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .panel-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .prop-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      font-size: 0.85rem;
+    }
+
+    .prop-row:last-child { border-bottom: none; }
+    .prop-key { color: var(--text-muted); }
+    .prop-val { font-weight: 500; }
+
+    /* Review Items */
+    .review-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .review-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      transition: all 0.2s;
+    }
+
+    .review-card:hover {
+      border-color: var(--border-light);
+    }
+
+    .review-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .review-pr-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .tag-completed { background: var(--accent-dim); color: var(--accent); }
+    .tag-processing { background: var(--info-dim); color: var(--info); }
+    .tag-failed { background: var(--critical-dim); color: var(--critical); }
+
+    .tag-critical { background: var(--critical-dim); color: var(--critical); border: 1px solid rgba(244, 63, 94, 0.2); }
+    .tag-warning { background: var(--warning-dim); color: var(--warning); border: 1px solid rgba(245, 158, 11, 0.2); }
+
+    .finding-box {
+      margin-top: 0.75rem;
+      padding: 0.9rem;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.85rem;
+    }
+
+    .finding-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.4rem;
+    }
+
+    .finding-code {
+      margin-top: 0.5rem;
+      padding: 0.6rem;
+      background: #060608;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.8rem;
+      overflow-x: auto;
+      color: #38bdf8;
+    }
+
+    /* Playground */
+    .playground-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    textarea {
+      width: 100%;
+      height: 420px;
+      background: #09090c;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      padding: 1rem;
+      font-size: 0.85rem;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent);
+      color: #000;
+      font-weight: 600;
+      font-size: 0.88rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+
+    .btn:hover { opacity: 0.9; }
+    .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .result-box {
+      height: 420px;
+      background: #09090c;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      overflow-y: auto;
+      font-size: 0.85rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .bento-grid { grid-template-columns: repeat(2, 1fr); }
+      .vitality-row, .playground-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="app-header">
+    <div class="header-inner">
+      <a href="/" class="brand">
+        <div class="brand-logo">
+          <svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor">
+            <path fill-rule="evenodd" d="M 128 24 L 218 76 L 218 180 L 128 232 L 38 180 L 38 76 Z M 128 68 L 180 128 L 160 148 L 128 112 L 96 148 L 76 128 Z M 128 144 L 148 164 L 128 184 L 108 164 Z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-title">ReviewBot</div>
+        </div>
+      </a>
+
+      <div class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+        <button class="tab-btn" onclick="switchTab('feed')">Review Feed</button>
+        <button class="tab-btn" onclick="switchTab('playground')">Diff Playground</button>
+        <button class="tab-btn" onclick="switchTab('config')">Config</button>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <span class="status-badge">
+          <span class="pulse-dot"></span> Engine Online
+        </span>
+        <a href="https://github.com/pranav6004/reviewbot" target="_blank" style="color: var(--text-muted); font-size: 0.85rem; text-decoration: none;">GitHub ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-wrap">
+    <!-- TAB 1: OVERVIEW -->
+    <section id="tab-overview" class="tab-pane active">
+      <div class="bento-grid">
+        <div class="card">
+          <div class="card-label">Total PRs Reviewed</div>
+          <div class="card-val" id="metric-total-jobs">-</div>
+          <div class="card-meta" id="metric-completed-jobs">Completed: -</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Critical Issues Caught</div>
+          <div class="card-val critical" id="metric-critical">-</div>
+          <div class="card-meta">Blocked before merge</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Warnings & Nits</div>
+          <div class="card-val warning" id="metric-warning">-</div>
+          <div class="card-meta">Suggestions & correctness</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Avg Review Latency</div>
+          <div class="card-val accent" id="metric-latency">-</div>
+          <div class="card-meta">End-to-end webhook to post</div>
+        </div>
+      </div>
+
+      <div class="vitality-row">
+        <div class="panel">
+          <div class="panel-header">
+            <h3 class="panel-title">Engine Configuration</h3>
+            <span class="mono" style="font-size: 0.75rem; color: var(--accent);">v0.1.0-alpha</span>
+          </div>
+          <div class="prop-row">
+            <span class="prop-key">Active Model</span>
+            <span class="prop-val mono" id="cfg-model" style="color: var(--info);">-</span>
+          </div>
+          <div class="prop-row">
+            <span class="prop-key">Provider Base URL</span>
+            <span class="prop-val mono" id="cfg-provider" style="font-size: 0.78rem;">-</span>
+          </div>
+          <div class="prop-row">
+            <span class="prop-key">GitHub App ID</span>
+            <span class="prop-val mono" id="cfg-appid">-</span>
+          </div>
+          <div class="prop-row">
+            <span class="prop-key">Webhook Signature Check</span>
+            <span class="prop-val" id="cfg-webhook" style="color: var(--accent);">Active (HMAC-SHA256)</span>
+          </div>
+          <div class="prop-row">
+            <span class="prop-key">Server Uptime</span>
+            <span class="prop-val mono" id="cfg-uptime">-</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <h3 class="panel-title">Quick Actions</h3>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <button class="btn" style="width: 100%; justify-content: center;" onclick="switchTab('playground')">
+              Test Sample Diff
+            </button>
+            <a href="https://github.com/pranav6004/reviewbot/pull/1" target="_blank" style="display: block; text-align: center; color: var(--text-muted); font-size: 0.85rem; padding: 0.6rem; border: 1px solid var(--border); border-radius: 6px; text-decoration: none;">
+              Open Test PR #1 ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: REVIEW FEED -->
+    <section id="tab-feed" class="tab-pane">
+      <div class="panel" style="margin-bottom: 1.5rem;">
+        <div class="panel-header">
+          <h3 class="panel-title">Recent Review Executions</h3>
+          <button class="tab-btn" onclick="loadReviews()">Refresh</button>
+        </div>
+        <div id="feed-container" class="review-list">
+          <div style="color: var(--text-muted); font-size: 0.85rem;">Loading review audit trail...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: PLAYGROUND -->
+    <section id="tab-playground" class="tab-pane">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <h3 class="panel-title">Diff Review Playground</h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Test review engine inference and Stage F validation directly without pushing to GitHub.
+            </p>
+          </div>
+          <button id="run-playground-btn" class="btn" onclick="runPlaygroundReview()">
+            Run AI Review
+          </button>
+        </div>
+
+        <div class="playground-grid">
+          <div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+              <span class="card-label">Unified Diff Input</span>
+              <button class="tab-btn" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;" onclick="loadSampleDiff()">Load SQLi Sample</button>
+            </div>
+            <textarea id="playground-diff" class="mono" spellcheck="false" placeholder="Paste git diff here..."></textarea>
+          </div>
+          <div>
+            <div class="card-label" style="margin-bottom: 0.5rem;">Review Findings Output</div>
+            <div id="playground-result" class="result-box">
+              <div style="color: var(--text-dim); text-align: center; margin-top: 100px;">
+                Paste diff and click <strong>"Run AI Review"</strong> to test.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: CONFIG -->
+    <section id="tab-config" class="tab-pane">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <h3 class="panel-title">Repository Configuration (.reviewbot.yaml)</h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Live YAML validation schema for path filters and custom instructions.
+            </p>
+          </div>
+          <button class="btn" onclick="validateConfig()">Validate Schema</button>
+        </div>
+        <div class="playground-grid">
+          <textarea id="config-yaml" class="mono" spellcheck="false">version: 1
+
+review:
+  enabled: true
+  profile: balanced
+  min_severity: warning
+  max_findings: 20
+  draft_pull_requests: false
+  path_filters:
+    - "!dist/**"
+    - "!build/**"
+    - "!**/*.lock"
+    - "!**/generated/**"
+  instructions: |
+    Only report issues introduced by this pull request.
+    Focus on code correctness, security vulnerabilities, and logic bugs.
+
+path_instructions:
+  - path: "apps/server/**"
+    instructions:
+      - "Verify authentication and signature validation on all endpoints."
+</textarea>
+          <div id="config-result" class="result-box">
+            <div style="color: var(--text-muted);">Click "Validate Schema" to inspect parsed rules.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Tab Switching
+    function switchTab(name) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+
+      const activeBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.textContent.toLowerCase().includes(name));
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const activePane = document.getElementById('tab-' + name);
+      if (activePane) activePane.classList.add('active');
+
+      if (name === 'overview') loadStats();
+      if (name === 'feed') loadReviews();
+    }
+
+    // Load Overview Stats
+    async function loadStats() {
+      try {
+        const res = await fetch('/api/stats');
+        const data = await res.json();
+
+        document.getElementById('metric-total-jobs').textContent = data.totalJobs ?? 0;
+        document.getElementById('metric-completed-jobs').textContent = `Completed: ${data.completedJobs ?? 0} | Failed: ${data.failedJobs ?? 0}`;
+        document.getElementById('metric-critical').textContent = data.criticalCount ?? 0;
+        document.getElementById('metric-warning').textContent = (data.warningCount ?? 0) + (data.suggestionCount ?? 0);
+        document.getElementById('metric-latency').textContent = data.avgDurationMs ? `${(data.avgDurationMs / 1000).toFixed(1)}s` : '0s';
+
+        document.getElementById('cfg-model').textContent = data.model;
+        document.getElementById('cfg-provider').textContent = data.providerUrl;
+        document.getElementById('cfg-appid').textContent = data.appId;
+        document.getElementById('cfg-uptime').textContent = `${Math.floor(data.uptimeSeconds / 60)}m ${data.uptimeSeconds % 60}s`;
+      } catch (err) {
+        console.error('Failed loading stats:', err);
+      }
+    }
+
+    // Load Review Feed
+    async function loadReviews() {
+      const container = document.getElementById('feed-container');
+      try {
+        const res = await fetch('/api/reviews');
+        const jobs = await res.json();
+
+        if (!jobs || jobs.length === 0) {
+          container.innerHTML = '<div style="color: var(--text-muted); font-size: 0.85rem; padding: 2rem 0; text-align: center;">No review jobs recorded yet.</div>';
+          return;
+        }
+
+        container.innerHTML = jobs.map(job => {
+          const date = new Date(job.created_at).toLocaleTimeString();
+          const findingsHtml = (job.findings || []).map(f => `
+            <div class="finding-box">
+              <div class="finding-header">
+                <div>
+                  <span class="tag tag-${f.severity}">${f.severity}</span>
+                  <strong style="margin-left: 0.5rem;">${escapeHtml(f.title)}</strong>
+                </div>
+                <span class="mono" style="font-size: 0.75rem; color: var(--text-muted);">${escapeHtml(f.file)}:L${f.line}</span>
+              </div>
+            </div>
+          `).join('');
+
+          return `
+            <div class="review-card">
+              <div class="review-top">
+                <div class="review-pr-title">
+                  <span>PR #${job.pr_number}</span>
+                  <span class="tag tag-${job.status}">${job.status}</span>
+                  <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: normal;">${escapeHtml(job.repo_owner)}/${escapeHtml(job.repo_name)}</span>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-dim);" class="mono">
+                  ${date}
+                </div>
+              </div>
+              ${job.error ? `<div style="color: var(--critical); font-size: 0.82rem; margin-top: 0.3rem;">Error: ${escapeHtml(job.error)}</div>` : ''}
+              ${findingsHtml || '<div style="font-size: 0.8rem; color: var(--text-dim); margin-top: 0.4rem;">No actionable findings recorded.</div>'}
+            </div>
+          `;
+        }).join('');
+      } catch (err) {
+        container.innerHTML = `<div style="color: var(--critical);">Failed loading review feed: ${err.message}</div>`;
+      }
+    }
+
+    // Playground Sample Diff
+    function loadSampleDiff() {
+      document.getElementById('playground-diff').value = `diff --git a/src/auth.ts b/src/auth.ts
+index e69de29..d95f3ad 100644
+--- a/src/auth.ts
++++ b/src/auth.ts
+@@ -10,6 +10,8 @@ export function checkAccess(userId: string) {
++  // Insecure raw query concatenation
++  const query = "SELECT * FROM users WHERE id = '" + userId + "'";
++  return db.execute(query);
+ }`;
+    }
+
+    // Run Playground Review
+    async function runPlaygroundReview() {
+      const diff = document.getElementById('playground-diff').value.trim();
+      const resultBox = document.getElementById('playground-result');
+      const btn = document.getElementById('run-playground-btn');
+
+      if (!diff) {
+        alert('Please enter a git unified diff first.');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Analyzing...';
+      resultBox.innerHTML = '<div style="color: var(--info); text-align: center; margin-top: 100px;">Calling AI Review Engine...</div>';
+
+      try {
+        const res = await fetch('/api/playground/review', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ diff })
+        });
+
+        const data = await res.json();
+        if (data.error) throw new Error(data.error);
+
+        const out = data.output;
+        let html = `
+          <div style="margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border);">
+            <div style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.3rem;">Review Summary</div>
+            <div style="color: var(--text-muted); font-size: 0.85rem;">${escapeHtml(out.summary)}</div>
+            <div style="margin-top: 0.5rem; font-size: 0.78rem;" class="mono">
+              Files Reviewed: ${data.filesReviewed} | Tokens: ${data.tokensUsed ?? 'N/A'} | Time: ${data.durationMs}ms
+            </div>
+          </div>
+        `;
+
+        if (out.findings && out.findings.length > 0) {
+          html += out.findings.map(f => `
+            <div class="finding-box" style="margin-bottom: 0.75rem;">
+              <div class="finding-header">
+                <div>
+                  <span class="tag tag-${f.severity}">${f.severity}</span>
+                  <strong style="margin-left: 0.4rem;">${escapeHtml(f.title)}</strong>
+                </div>
+                <span class="mono" style="font-size: 0.75rem; color: var(--text-muted);">${escapeHtml(f.file)}:L${f.line}</span>
+              </div>
+              <p style="margin-top: 0.35rem; color: var(--text-muted);">${escapeHtml(f.message)}</p>
+              ${f.evidence ? `<div class="finding-code">${escapeHtml(f.evidence)}</div>` : ''}
+              ${f.suggestion ? `<div style="margin-top: 0.4rem; font-size: 0.75rem; color: var(--accent);">Suggestion:<pre class="mono" style="padding: 0.4rem; background: rgba(16,185,129,0.06); border-radius: 4px; margin-top: 0.2rem;">${escapeHtml(f.suggestion)}</pre></div>` : ''}
+            </div>
+          `).join('');
+        } else {
+          html += '<div style="color: var(--accent); text-align: center; padding: 2rem 0;">✅ No actionable issues detected. Looks clean!</div>';
+        }
+
+        resultBox.innerHTML = html;
+      } catch (err) {
+        resultBox.innerHTML = `<div style="color: var(--critical);">Review failed: ${escapeHtml(err.message)}</div>`;
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Run AI Review';
+      }
+    }
+
+    // Validate Config
+    async function validateConfig() {
+      const yaml = document.getElementById('config-yaml').value;
+      const resBox = document.getElementById('config-result');
+
+      try {
+        const res = await fetch('/api/config/validate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ yaml })
+        });
+        const data = await res.json();
+
+        if (data.valid) {
+          resBox.innerHTML = `
+            <div style="color: var(--accent); font-weight: 600; margin-bottom: 0.5rem;">✅ Configuration Valid!</div>
+            <pre class="mono" style="font-size: 0.8rem; color: var(--text-muted);">${escapeHtml(JSON.stringify(data.config, null, 2))}</pre>
+          `;
+        } else {
+          resBox.innerHTML = `
+            <div style="color: var(--critical); font-weight: 600; margin-bottom: 0.5rem;">❌ Validation Error:</div>
+            <pre class="mono" style="color: var(--critical);">${escapeHtml(data.error)}</pre>
+          `;
+        }
+      } catch (err) {
+        resBox.innerHTML = `<div style="color: var(--critical);">${escapeHtml(err.message)}</div>`;
+      }
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    // Init
+    loadStats();
+    loadSampleDiff();
+  </script>
+</body>
+</html>

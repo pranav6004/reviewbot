@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256"><title>ReviewBot Symbol</title><g transform="translate(-23.3 -23.3) scale(1.182)">
+  
+  <path fill="#09090b" fill-rule="evenodd" d="
+    M 128 24
+    L 218 76
+    L 218 180
+    L 128 232
+    L 38 180
+    L 38 76
+    Z
+    M 128 68
+    L 180 128
+    L 160 148
+    L 128 112
+    L 96 148
+    L 76 128
+    Z
+    M 128 144
+    L 148 164
+    L 128 184
+    L 108 164
+    Z
+  "/>
+</g></svg>
