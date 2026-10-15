@@ -715,6 +715,26 @@ index e69de29..d95f3ad 100644
           </div>
         `;
 
+        if (out.diagram) {
+          html += `
+            <details style="margin-bottom: 0.75rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 6px; padding: 0.5rem 0.75rem;">
+              <summary style="cursor: pointer; font-size: 0.85rem; font-weight: 600;">🔄 Architecture & Sequence Diagram</summary>
+              <pre class="mono" style="margin-top: 0.5rem; font-size: 0.75rem; background: rgba(0,0,0,0.3); padding: 0.5rem; border-radius: 4px; overflow-x: auto; color: var(--text-muted);">${escapeHtml(out.diagram)}</pre>
+            </details>
+          `;
+        }
+
+        if (out.walkthrough && out.walkthrough.length > 0) {
+          html += `
+            <details style="margin-bottom: 0.75rem; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 6px; padding: 0.5rem 0.75rem;">
+              <summary style="cursor: pointer; font-size: 0.85rem; font-weight: 600;">📋 File Walkthrough (${out.walkthrough.length} files)</summary>
+              <div style="margin-top: 0.5rem; font-size: 0.8rem;">
+                ${out.walkthrough.map(w => `<div style="margin-bottom: 0.4rem;"><strong class="mono" style="color: var(--primary);">${escapeHtml(w.file)}:</strong> <span style="color: var(--text-muted);">${escapeHtml(w.summary)}</span></div>`).join('')}
+              </div>
+            </details>
+          `;
+        }
+
         if (out.findings && out.findings.length > 0) {
           html += out.findings.map(f => `
             <div class="finding-box" style="margin-bottom: 0.75rem;">

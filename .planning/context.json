@@ -167,6 +167,11 @@
       "date": "2026-10-05",
       "action": "security_audit_execution",
       "details": "Executed full formal security audit on ReviewBot using security-audit skill. Mapped architecture, evaluated 10 attack classes across 5 subsystems, validated coverage-ledger.json (10 units PASS) and findings.json (3 confirmed findings PASS). Identified webhook fail-open condition, unauthenticated playground LLM quota exhaustion, and telemetry repository disclosure. Generated complete report artifacts in security-audit-run/."
+    },
+    {
+      "date": "2026-10-16",
+      "action": "pr_output_ux_sticky_walkthrough_and_mermaid",
+      "details": "Upgraded PR review output UX to match CodeRabbit standards: 1) Extended ReviewOutputSchema with optional Mermaid diagram; 2) Updated prompt builder to instruct LLM to generate architectural sequence/flow diagrams; 3) Formatted sticky summary comment with STICKY_SUMMARY_MARKER, collapsible <details> file walkthrough table, Mermaid code block, and command tips footer; 4) Implemented upsertStickyComment in GitHubService to prevent comment spam by updating existing sticky comments in-place; 5) Added walkthrough and diagram accordion in Control Center playground UI. 27/27 tests passing."
     }
   ]
 }

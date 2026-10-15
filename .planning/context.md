@@ -155,4 +155,18 @@
 - **Artifacts Generated in `security-audit-run/`:**
   - `run-metadata.json`, `architecture.md`, `coverage-ledger.json`, `findings.json`, `REPORT.md`, `FINDINGS-DETAIL.md`, `NEEDS-VALIDATION.md`.
 
+## 2026-10-16 — PR Output UX Upgrade (Sticky Walkthrough Table, Mermaid Diagrams & Comment Upsert)
+- **Features Implemented:**
+  - Extended `ReviewOutputSchema` in `packages/review-core/src/types.ts` with optional Mermaid `diagram` field.
+  - Updated `buildSystemPrompt` in `packages/review-core/src/prompts.ts` to instruct LLM to output valid Mermaid architecture/sequence diagrams for multi-component PRs.
+  - Upgraded `formatReviewSummary` in `packages/github/src/formatter.ts` with `<!-- reviewbot:sticky:summary -->` marker, clean Mermaid block formatting, and `<details><summary><b>📋 File Walkthrough</b></summary>` collapsible table.
+  - Implemented `upsertStickyComment` in `packages/github/src/client.ts` to locate existing sticky summary comments on the PR and update them in-place via `issues.updateComment` or create new via `issues.createComment`.
+  - Updated `postReview` in `packages/github/src/client.ts` to upsert sticky comment on the PR conversation thread and submit inline comments on specific lines via `pulls.createReview`.
+  - Added collapsible walkthrough and Mermaid diagram accordion previews to the Control Center Diff Review Playground in `apps/server/public/index.html`.
+- **Issues Faced & Fixes:**
+  - `npm run build` had workspace build order race where `@reviewbot/github` built before `@reviewbot/review-core`. Fixed by updating root `package.json` build script to strictly follow topological dependency order.
+- **Testing:**
+  - Added test cases in `packages/github/test/github.test.ts` for sticky formatting, Mermaid block inclusion, and sticky comment upsert create-then-update behavior.
+  - Executed `npm run build && npm test`: all 8 test suites passing (27/27 unit tests).
+
 

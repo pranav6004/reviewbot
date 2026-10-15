@@ -36,6 +36,7 @@ export type WalkthroughItem = z.infer<typeof WalkthroughItemSchema>;
 export const ReviewOutputSchema = z.object({
   schemaVersion: z.literal("review-output-v1"),
   summary: z.string(),
+  diagram: z.string().optional(),
   walkthrough: z.array(WalkthroughItemSchema).default([]),
   findings: z.array(ReviewFindingSchema).default([]),
 });

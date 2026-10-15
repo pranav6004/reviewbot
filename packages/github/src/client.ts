@@ -1,6 +1,11 @@
 import type { Octokit } from "@octokit/rest";
 import type { ReviewOutput } from "@reviewbot/review-core";
-import { formatReviewSummary, formatInlineComment } from "./formatter.js";
+import {
+  formatReviewSummary,
+  formatInlineComment,
+  STICKY_SUMMARY_MARKER,
+  SUMMARY_V1_MARKER,
+} from "./formatter.js";
 
 export interface PRMetadata {
   number: number;
@@ -80,7 +85,51 @@ export class GitHubService {
   }
 
   /**
-   * Post comprehensive review (summary body + inline comments) to GitHub.
+   * Upsert a persistent sticky comment containing review walkthrough and Mermaid diagram.
+   * If a comment with the sticky marker already exists, it is edited in-place to avoid comment clutter.
+   */
+  async upsertStickyComment(
+    owner: string,
+    repo: string,
+    pullNumber: number,
+    body: string
+  ): Promise<{ id: number; action: "created" | "updated" }> {
+    const { data: comments } = await this.octokit.issues.listComments({
+      owner,
+      repo,
+      issue_number: pullNumber,
+      per_page: 50,
+    });
+
+    const existing = comments.find(
+      (c) =>
+        c.body &&
+        (c.body.includes(STICKY_SUMMARY_MARKER) || c.body.includes(SUMMARY_V1_MARKER))
+    );
+
+    if (existing) {
+      const { data: updated } = await this.octokit.issues.updateComment({
+        owner,
+        repo,
+        comment_id: existing.id,
+        body,
+      });
+      return { id: updated.id, action: "updated" };
+    }
+
+    const { data: created } = await this.octokit.issues.createComment({
+      owner,
+      repo,
+      issue_number: pullNumber,
+      body,
+    });
+    return { id: created.id, action: "created" };
+  }
+
+  /**
+   * Post comprehensive review to GitHub:
+   * 1. Upserts sticky walkthrough comment on the PR conversation timeline.
+   * 2. Submits batch inline comments on specific lines via pulls.createReview (if findings exist).
    */
   async postReview(
     owner: string,
@@ -91,28 +140,39 @@ export class GitHubService {
   ) {
     const summaryMarkdown = formatReviewSummary(output);
 
-    // Map findings to GitHub review comment objects
-    const comments = output.findings.map((finding) => ({
-      path: finding.file,
-      line: finding.line,
-      side: finding.side,
-      body: formatInlineComment(finding),
-    }));
-
-    const hasCriticalIssues = output.findings.some((f) => f.severity === "critical");
-    const event = hasCriticalIssues ? "COMMENT" : "COMMENT"; // default to COMMENT; could be REQUEST_CHANGES if configured
-
-    // Submit as a single batch review
-    const response = await this.octokit.pulls.createReview({
+    // 1. Upsert sticky summary & walkthrough comment
+    const stickyResult = await this.upsertStickyComment(
       owner,
       repo,
-      pull_number: pullNumber,
-      commit_id: headSha,
-      body: summaryMarkdown,
-      event,
-      comments: comments.length > 0 ? comments : undefined,
-    });
+      pullNumber,
+      summaryMarkdown
+    );
 
-    return response.data;
+    // 2. Submit inline findings if present
+    let reviewResult: any = null;
+    if (output.findings.length > 0) {
+      const comments = output.findings.map((finding) => ({
+        path: finding.file,
+        line: finding.line,
+        side: finding.side,
+        body: formatInlineComment(finding),
+      }));
+
+      const response = await this.octokit.pulls.createReview({
+        owner,
+        repo,
+        pull_number: pullNumber,
+        commit_id: headSha,
+        body: `⚡ **ReviewBot** completed review with ${output.findings.length} inline note(s).\nSee sticky comment above for full architectural walkthrough and flow.`,
+        event: "COMMENT",
+        comments,
+      });
+      reviewResult = response.data;
+    }
+
+    return {
+      stickyComment: stickyResult,
+      review: reviewResult,
+    };
   }
 }

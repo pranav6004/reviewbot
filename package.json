@@ -10,7 +10,7 @@
     "apps/*"
   ],
   "scripts": {
-    "build": "npm run --workspaces --if-present build",
+    "build": "npm --workspace=@reviewbot/config run build && npm --workspace=@reviewbot/diff run build && npm --workspace=@reviewbot/llm run build && npm --workspace=@reviewbot/persistence run build && npm --workspace=@reviewbot/review-core run build && npm --workspace=@reviewbot/github run build && npm --workspace=@reviewbot/server run build",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --build --dry",

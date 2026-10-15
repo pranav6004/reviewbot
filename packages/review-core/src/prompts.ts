@@ -33,6 +33,7 @@ You MUST respond with a single valid JSON object strictly matching this schema:
 {
   "schemaVersion": "review-output-v1",
   "summary": "High-level overview of what the PR changes, key risks, and architectural impact.",
+  "diagram": "Optional valid Mermaid diagram string (e.g. sequenceDiagram or flowchart TD) visualizing the flow, interactions, or structural changes introduced. Omit or set null for single-file or trivial changes.",
   "walkthrough": [
     {
       "file": "path/to/file.ext",
